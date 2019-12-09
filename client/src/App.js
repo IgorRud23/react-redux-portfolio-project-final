@@ -11,19 +11,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Navi from './components/Navi';
 import NotFound from './containers/NotFound';
-import HomePage from './components/HomePage';
 
 import BookDetails from './containers/BookDetails';
 import CreateBook from './containers/CreateBook';
-
-
-
-
-
-
-
-
-
+import HomePage from './containers/Home';
 
 
 function App() {
@@ -34,6 +25,7 @@ function App() {
           <img src={logo} className='App-logo' alt='logo'/>
           <Header/>
           <Navi/>
+          <br/>
 
             <Switch>
             <Route exact path='/' component={HomePage}/>

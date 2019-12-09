@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 
-import counterReducer from './counter';
+import list from './list';
 
 const appReducer = combineReducers({
-  counterReducer,
+  list,
 });
 
 export default appReducer;
