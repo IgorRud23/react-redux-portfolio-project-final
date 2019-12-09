@@ -1,24 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 
 const CreateBook = () => {
+
+  const [state, setState] = useState({
+      name: '',
+      author: '',
+      genre: '',
+      image_src: '',
+      discription: '',
+      release_date: '',
+  });
+
+  const handleOnChange = (key) => (event) => {
+    const value = event.target.value;
+    if (value.length < 34) {
+    setState(preState => ({...preState, [key]: value}) )
+  }
+  };
+
+  const handleSave = () => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(state),
+      credentials: 'omit',
+      headers:{
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    };
+    fetch('http://localhost:3000/api/books/create', options).then(res => {
+      console.log(res);
+    }).catch(console.error);
+  };
+
   return (
     <main>
     <br/>
-      <Typography variant='h3' color='primary'>Put Book on List</Typography>
+      <Typography variant='h5' color='primary'>Put Book on List</Typography>
 
       <form noValidate autoComplete='off' className="App-create-form">
-        <TextField label='name' margin='normal' placeholder='book title'/>
-        <TextField label='author' margin='normal' placeholder='author name'/>
-        <TextField label='genre' margin='normal' placeholder='book genre'/>
-        <TextField label='image src' margin='normal' placeholder='paste url here'/>
-        <TextField label='discription' margin='normal' placeholder='short discription'/>
-        <TextField label='release date' margin='normal' placeholder='year'/>
+        <TextField onChange={handleOnChange('name')} value={state.name} label='name' margin='normal' placeholder='book title'/>
+        <TextField onChange={handleOnChange('author')} value={state.author} label='author' margin='normal' placeholder='author name'/>
+        <TextField onChange={handleOnChange('genre')} value={state.genre} label='genre' margin='normal' placeholder='book genre'/>
+        <TextField onChange={handleOnChange('image_src')} value={state.image_src} label='image src' margin='normal' placeholder='paste url here'/>
+        <TextField onChange={handleOnChange('discription')} value={state.discription} label='discription' margin='normal' placeholder='short discription'/>
+        <TextField onChange={handleOnChange('release_date')} value={state.release_date} label='release date' margin='normal' placeholder='year'/>
 
-        <Button color='primary' variant='contained'>Create</Button>
+        <Button color='primary' variant='contained' onClick={handleSave}>Create</Button>
       </form>
     </main>
   )
