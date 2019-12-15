@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   scope '/api' do
     get '/books/list' => 'books#list'
     post '/books/create' => 'books#create'
-    get '/books/delete' => 'books#delete'
+    post '/books/delete' => 'books#delete'
   end
 end

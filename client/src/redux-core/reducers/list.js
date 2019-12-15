@@ -30,7 +30,7 @@ const list = (state = initState, action) => {
       data: [...state.data, action.payload],
     });
     case 'DELETE_FROM_LIST':
-    const newList = state.list.data.filter((book) => book.id !== action.payload);
+    const newList = state.data.filter((book) => book.id !== action.payload);
     return ({
       ...state,
       data:newList,

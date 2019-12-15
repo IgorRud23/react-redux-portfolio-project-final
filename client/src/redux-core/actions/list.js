@@ -11,3 +11,10 @@ export const addItemToList = (newBook) => {
     payload: newBook,
   });
 };
+
+export const deleteItemFromList = (itemId) => {
+  return ({
+    type: 'DELETE_FROM_LIST',
+    payload: itemId,
+  });
+};

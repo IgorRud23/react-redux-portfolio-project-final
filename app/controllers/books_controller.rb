@@ -14,16 +14,16 @@ class BooksController < ApplicationController
       end
   end
 
-private
-
-  def books_params
-    params.require(:book).permit(:name, :author, :genre, :image_src, :discription, :release_date)
-  end
-
   def delete
     @book ||= Book.find(params[:id])
     @book.delete
     render json: params[:id]
+  end
+
+private
+
+  def books_params
+    params.require(:book).permit(:name, :author, :genre, :image_src, :discription, :release_date)
   end
 
 end
