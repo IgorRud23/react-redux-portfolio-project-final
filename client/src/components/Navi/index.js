@@ -10,6 +10,9 @@ const Navi = () => {
       <li>
         <Link to='/create'>Add a new Book</Link>
       </li>
+      <li>
+        <Link to='/delete'>Remove Book</Link>
+      </li>
     </nav>
   );
 };

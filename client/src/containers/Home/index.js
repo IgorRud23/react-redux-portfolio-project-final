@@ -13,9 +13,7 @@ const Home = () => {
   const listOfBooks = useSelector(state => state.list);
 
   useEffect(() => {
-    if (!listOfBooks.data.length) {
       dispatch(getListOfBooks());
-    }
   }, []); //add ampty array to ensure that containers renders once.
 
   return(

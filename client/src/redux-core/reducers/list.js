@@ -24,6 +24,17 @@ const list = (state = initState, action) => {
       isPending: false,
       hasError: action.payload,
     });
+    case 'ADD_TO_LIST':
+    return ({
+      ...state,
+      data: [...state.data, action.payload],
+    });
+    case 'DELETE_FROM_LIST':
+    const newList = state.list.data.filter((book) => book.id !== action.payload);
+    return ({
+      ...state,
+      data:newList,
+    });
   }
   return state;
 };
