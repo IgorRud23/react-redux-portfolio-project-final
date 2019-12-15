@@ -23,11 +23,11 @@ const BookInfo = () => {
 
   return (
     <section>
-      <Typography align='center' variant='h5' color='primary' gutterBottom>BOOK INFO</Typography>
+      <Typography align='center' variant='h6' color='primary' gutterBottom>BOOK INFO</Typography>
       <br/>
       <Paper elevation={7} className='App-column-center'>
 
-        <Typography gutterBottom>{book.name}</Typography>
+        <Typography gutterBottom><b>{book.name}</b></Typography>
         <img src={book.image_src} alt='Image of event'/>
         <Typography paragraph>{book.discription}</Typography>
         <Typography gutterBottom>Author: {book.author}</Typography>
