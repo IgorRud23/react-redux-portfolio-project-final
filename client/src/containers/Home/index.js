@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-
+import {useHistory} from 'react-router';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {getListOfBooks} from '../../redux-core/actions/list'
@@ -9,6 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
 const Home = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const listOfBooks = useSelector(state => state.list);
 
@@ -16,13 +17,17 @@ const Home = () => {
       dispatch(getListOfBooks());
   }, []); //add ampty array to ensure that containers renders once.
 
+  const handleOpenItem = bookID => () => {
+    history.push(`/bookdetails/${bookID}`);
+  };
+
   return(
     <section>
     <Typography variant='h4' color='primary'>Books List</Typography>
 
     <List className="App-column-center">
       {listOfBooks.data.map(book => (
-        <ListItem key={book.id} button>
+        <ListItem key={book.id} button onClick={handleOpenItem(book.id)}>
           <Typography>{book.name}</Typography>
         </ListItem>
       ))}

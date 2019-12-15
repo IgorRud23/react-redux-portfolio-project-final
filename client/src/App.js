@@ -11,10 +11,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Navi from './components/Navi';
 import NotFound from './containers/NotFound';
+import BookDetails from './components/BookDetails';
 
 import Container from '@material-ui/core/Container';
 
-import BookDetails from './containers/BookDetails';
 import CreateBook from './containers/CreateBook';
 import HomePage from './containers/Home';
 import DeleteBox from './containers/DeleteBox';
@@ -33,8 +33,8 @@ function App() {
 
               <Switch>
                 <Route exact path='/' component={HomePage}/>
-                <Route exact path='/details' component={BookDetails}/>
                 <Route exact path='/create' component={CreateBook}/>
+                <Route exact path='/bookdetails/:id' component={BookDetails}/>
                 <Route exact path='/delete' component={DeleteBox}/>
                 <Route component={NotFound}/>
               </Switch>
