@@ -54,8 +54,7 @@ const CreateBook = () => {
 
   return (
     <main>
-    <br/>
-      <Typography variant='h5' color='primary'>Put Book on List</Typography>
+      <Typography variant='h4' color='primary'>Put Book on List</Typography>
 
       <form noValidate autoComplete='off' className="App-column-center">
         <TextField onChange={handleOnChange('name')} value={state.name} label='name' margin='normal' placeholder='book title'/>
