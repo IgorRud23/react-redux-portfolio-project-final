@@ -7,7 +7,7 @@ import store from './redux-core/store';
 import logo from './logo.svg';
 import './App.css';
 
-import Header from './components/Header';
+import Head from './components/Head';
 import Slogan from './components/Slogan';
 import Footer from './components/Footer';
 import Navi from './components/Navi';
@@ -30,7 +30,7 @@ function App() {
               <img src={logo} className='App-logo' alt='logo'/>
               <Slogan/>
 
-              <Header/>
+              <Head/>
               <Navi/>
               <br/>
 
