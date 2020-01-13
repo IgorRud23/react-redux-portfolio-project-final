@@ -24,7 +24,7 @@ const CreateBook = () => {
 
   const handleOnChange = (key) => (event) => {
     const value = event.target.value;
-    if (value.length < 200) {
+    if (value.length < 1000) {
     setState(preState => ({...preState, [key]: value}) )
   }
   };

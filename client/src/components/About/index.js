@@ -3,8 +3,9 @@ import Typography from '@material-ui/core/Typography';
 
 const About = () => {
   return (
-    <Typography>
-    This site made for you.
+    <Typography variantMapping='p'>
+    <p>We helping people to exchange knowledge and explore the world of books.</p>
+    <p>With us, will be easier to pick the right book for yourself and share books that inspired you.</p>
     </Typography>
   )
 };
