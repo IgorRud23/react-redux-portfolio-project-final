@@ -2,7 +2,7 @@ class BooksController < ApplicationController
  skip_before_action :verify_authenticity_token
   def list
     @books = Book.all
-  render json: @books
+    render json: @books
   end
 
   def create
