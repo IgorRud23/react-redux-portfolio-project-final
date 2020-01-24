@@ -23,15 +23,17 @@ const Home = () => {
 
   return(
     <section>
-    <Typography variant='h4' color='primary'>Books List</Typography>
 
-    <List className="App-column-center">
-      {listOfBooks.data.map((book, index) => (
-        <ListItem key={book.id} button onClick={handleOpenItem(book.id)} divider>
-          <Typography>{index + 1}: {book.name}</Typography>
-        </ListItem>
-      ))}
-    </List>
+      <Typography variant='h4' color='primary'>Books List</Typography>
+
+        <List className="App-column-center">
+          {listOfBooks.data.map((book, index) => (
+            <ListItem key={book.id} button onClick={handleOpenItem(book.id)} divider>
+              <Typography>{index + 1}: {book.name}</Typography>
+            </ListItem>
+          ))}
+        </List>
+
     </section>
   );
 };

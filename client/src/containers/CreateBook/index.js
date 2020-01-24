@@ -19,14 +19,15 @@ const initState = {
 const CreateBook = () => {
 
   const dispatch = useDispatch();
-
   const [state, setState] = useState(initState);
 
   const handleOnChange = (key) => (event) => {
+
     const value = event.target.value;
+    console.log(event.target.value);
     if (value.length < 1000) {
-    setState(preState => ({...preState, [key]: value}) )
-  }
+      setState(preState => ({...preState, [key]: value}) )
+    }
   };
 
   const handleSave = () => {

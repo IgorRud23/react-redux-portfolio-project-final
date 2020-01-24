@@ -16,24 +16,24 @@ const DeleteBox = () => {
   const books = useSelector(state => state.list.data);
 
   useEffect(() => {
-      dispatch(getListOfBooks());
+    dispatch(getListOfBooks());
   }, []);
 
   const onDelete = (bookID) => () => {
     console.log(bookID);
     dispatch(deleteItemFromList(bookID));
 
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({id: bookID}),
-    credentials: 'omit',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  };
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({id: bookID}),
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };
 
-  fetch('http://localhost:3000/api/books/delete', options).catch(console.error);
-  }
+    fetch('http://localhost:3000/api/books/delete', options).catch(console.error);
+  };
 
   return (
     <section>

@@ -1,7 +1,7 @@
-import {applyMiddleware, createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux'; //use redux middleware to respond to and modify state change
 
 import promise from 'redux-promise-middleware';
-import thunk from 'redux-thunk';
+//import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import appReducer from './reducers';
