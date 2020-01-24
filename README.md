@@ -6,14 +6,14 @@ This app is my final project for Web Development Bootcamp at Flatiron school. It
 
 Installation
 
-git clone https://github.com/IgorRud23/react-redux-portfolio-project-final.git
-cd into app directory React-Redux-Portfolio-Project-Final
-bundle install to install dependancies
-rails db:migrate create the database
-rails db:seed to seed the database
-run rails s to launch a local server
-cd client 
-npm start
+* git clone https://github.com/IgorRud23/react-redux-portfolio-project-final.git
+* cd into app directory React-Redux-Portfolio-Project-Final
+* bundle install to install dependancies
+* rails db:migrate create the database
+* rails db:seed to seed the database
+* run rails s to launch a local server
+* cd client
+* npm start
 
 Usage
 
