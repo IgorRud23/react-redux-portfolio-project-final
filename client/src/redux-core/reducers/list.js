@@ -16,7 +16,7 @@ const list = (state = initState, action) => {
     return ({
       ...state,
       isPending: false,
-      data: action.payload,
+      data: action.payload
     });
     case 'GET_LIST' + '_REJECTED':
     return ({

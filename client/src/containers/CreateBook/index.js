@@ -37,10 +37,9 @@ const CreateBook = () => {
       credentials: 'omit',
       headers:{
         'Content-Type': 'application/json',
-        Accept: 'application/json',
+        'Accept': 'application/json',
       },
     };
-
 
 
     fetch('http://localhost:3000/api/books/create', options)
@@ -52,7 +51,7 @@ const CreateBook = () => {
         alert('Successfully created!');
       }).catch(console.error);
     };
-
+    
   return (
     <main>
       <Typography variant='h4' color='primary'>Put Book on List</Typography>
